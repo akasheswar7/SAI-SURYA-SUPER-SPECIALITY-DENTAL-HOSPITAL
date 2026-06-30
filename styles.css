@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0ea5e9 0%, #0d9488 100%);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0369a1;
+}
+
+/* Glassmorphism utility */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(14, 165, 233, 0.08);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(241, 245, 249, 0.8);
+}
+
+/* Dynamic Gradients */
+.gradient-bg-sky {
+  background: linear-gradient(135deg, #e0f2fe 0%, #f0fdfa 100%);
+}
+
+.gradient-text-sky {
+  background: linear-gradient(135deg, #0369a1 0%, #0d9488 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scroll-triggered reveal animations */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-element.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom bounce for icons */
+@keyframes soft-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-soft-float {
+  animation: soft-float 3s ease-in-out infinite;
+}
+
+/* pulse outline animation for floating buttons */
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.4), 0 0 0 10px rgba(13, 148, 136, 0.2), 0 0 0 20px rgba(13, 148, 136, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(13, 148, 136, 0.2), 0 0 0 20px rgba(13, 148, 136, 0.1), 0 0 0 30px rgba(13, 148, 136, 0);
+  }
+}
+
+.whatsapp-ripple {
+  animation: ripple 2s infinite;
+}
+
+/* Lightbox styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.95);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lightbox.show {
+  display: flex;
+  opacity: 1;
+}
+
+/* Draw checkmark animation for form submission */
+.success-checkmark-svg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #0d9488;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px #0d9488;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.success-checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #0d9488;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 40px #e0f2fe;
+  }
+}
+
+/* Swiper-like custom slide styles */
+.testimonial-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Premium Preloader Styles */
+.logo-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999;
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1), transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.logo-preloader.fade-out {
+  opacity: 0;
+  transform: scale(1.08);
+  pointer-events: none;
+}
+
+.preloader-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Concentric Rings */
+.rings-container {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.preloader-ring-outer {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border: 2px solid transparent;
+  border-top-color: #0ea5e9;
+  border-bottom-color: #0ea5e9;
+  border-radius: 50%;
+  animation: rotateClockwise 3s linear infinite;
+}
+
+.preloader-ring-middle {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border: 2px solid transparent;
+  border-left-color: #0d9488;
+  border-right-color: #0d9488;
+  border-radius: 50%;
+  animation: rotateCounterClockwise 2.5s linear infinite;
+}
+
+.preloader-ring-inner {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border: 2px solid transparent;
+  border-top-color: #38bdf8;
+  border-radius: 50%;
+  animation: rotateClockwise 1.8s linear infinite;
+}
+
+@keyframes rotateClockwise {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounterClockwise {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Central Logo reveal */
+.preloader-logo-frame {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  border: 4px solid #f0fdfa;
+  animation: logoZoomIn 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.preloader-logo-frame img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+@keyframes logoZoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Branding Text Animation */
+.preloader-text-wrapper {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: slideTextUp 1s cubic-bezier(0.25, 1, 0.5, 1) 0.5s forwards;
+}
+
+.preloader-clinic-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  background: linear-gradient(135deg, #0ea5e9, #0d9488);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.25rem;
+}
+
+.preloader-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+@keyframes slideTextUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Progress indicator loading line */
+.preloader-bar-container {
+  width: 160px;
+  height: 4px;
+  background: #f1f5f9;
+  border-radius: 2px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+}
+
+.preloader-bar-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #0ea5e9, #0d9488);
+  animation: fillPreloaderBar 3.2s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes fillPreloaderBar {
+  to {
+    width: 100%;
+  }
+}
+
+/* Skip/Lock Utilities */
+.preloader-skipped .logo-preloader {
+  display: none !important;
+}
+.preloader-active-lock body {
+  overflow: hidden !important;
+  height: 100vh !important;
+}

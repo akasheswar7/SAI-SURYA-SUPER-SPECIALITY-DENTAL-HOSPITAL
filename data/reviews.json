@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Ravi Kumar",
+    "rating": 5,
+    "text": "Sai Surya Dental Clinic provided exceptional care for my dental implant. The doctors are highly professional and explain everything clearly. Highly recommended!",
+    "date": "June 2026",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    "name": "Siri Latha",
+    "rating": 5,
+    "text": "I was terrified of root canals, but the treatment here was completely painless! The clinic is extremely hygienic and the staff is very polite. Best dental clinic in Gajuwaka.",
+    "date": "May 2026",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    "name": "K. Srinivasa Rao",
+    "rating": 5,
+    "text": "Very affordable pricing compared to other premium clinics in Visakhapatnam. Dr. Surya is very experienced and did an excellent job with my crowns and bridges.",
+    "date": "April 2026",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    "name": "Anjali Devi",
+    "rating": 5,
+    "text": "I got my invisible aligners done here. The results are amazing! The digital scanning and treatment planning were top-notch. Truly modern and advanced technology.",
+    "date": "March 2026",
+    "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+  }
+]

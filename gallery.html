@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <!-- Preloader lock script to prevent content flashing -->
+  <script>
+    (function() {
+      const visited = sessionStorage.getItem('saisurya_preloader_shown') === 'true';
+      if (visited) {
+        document.documentElement.classList.add('preloader-skipped');
+      } else {
+        document.documentElement.classList.add('preloader-active-lock');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Sai Surya Super Speciality Dental Clinic</title>
+  
+  <meta name="description" content="View clinic photos, treatment rooms, diagnostic equipment, and dental transformations in the visual gallery for Sai Surya Dental Clinic in Gajuwaka.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            clinic: {
+              light: '#f0f9ff',
+              sky: '#0ea5e9',
+              dark: '#0369a1',
+              navy: '#0f172a',
+              teal: '#0d9488',
+              tealLight: '#f0fdfa',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-700 antialiased selection:bg-sky-500 selection:text-white">
+  <!-- Premium Logo Preloader / Cinematic Split-Gate Splash Screen -->  <!-- Premium Concentric Rings Preloader / Cinematic Light-themed Splash Screen -->
+  <div class="logo-preloader" id="logoPreloader">
+    <div class="preloader-content">
+      <!-- Concentric Spinning Rings -->
+      <div class="rings-container">
+        <div class="preloader-ring-outer"></div>
+        <div class="preloader-ring-middle"></div>
+        <div class="preloader-ring-inner"></div>
+        <div class="preloader-logo-frame">
+          <img src="assets/logo.jpg" alt="Sai Surya Dental Clinic Logo">
+        </div>
+      </div>
+      <!-- Clinic branding -->
+      <div class="preloader-text-wrapper">
+        <h2 class="preloader-clinic-name">SAI SURYA</h2>
+        <p class="preloader-tagline">SUPER SPECIALITY DENTAL CLINIC</p>
+      </div>
+      <!-- Loading progress line -->
+      <div class="preloader-bar-container">
+        <div class="preloader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="assets/logo.jpg" alt="Sai Surya Clinic Logo" class="h-12 w-12 rounded-full border-2 border-sky-100 object-cover shadow-sm transition-transform duration-300 group-hover:scale-105">
+          <div>
+            <span class="block font-heading font-extrabold text-base sm:text-lg text-slate-800 tracking-tight leading-none">SAI SURYA</span>
+            <span class="block font-heading text-xs font-semibold text-sky-600 tracking-wider mt-0.5">SUPER SPECIALITY DENTAL</span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex space-x-1 lg:space-x-2">
+          <a href="about.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">About Us</a>
+          <a href="services.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">Services</a>
+          <a href="testimonials.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">Reviews</a>
+          <a href="gallery.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-sky-600 font-semibold transition-colors">Gallery</a>
+          <a href="faq.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">FAQs</a>
+          <a href="contact.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">Contact</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="contact.html" class="bg-gradient-to-r from-sky-500 to-teal-500 hover:from-sky-600 hover:to-teal-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300">
+            Book Appointment
+          </a>
+        </div>
+
+        <div class="flex md:hidden">
+          <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-lg text-slate-500 hover:text-sky-600 hover:bg-slate-100 transition-all">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white/95 shadow-lg">
+      <div class="px-2 pt-2 pb-4 space-y-1">
+        <a href="about.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">About Us</a>
+        <a href="services.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Our Services</a>
+        <a href="testimonials.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Testimonials</a>
+        <a href="gallery.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-sky-600 bg-sky-50 border-l-4 border-sky-500">Gallery</a>
+        <a href="faq.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">FAQs</a>
+        <a href="contact.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Contact & Booking</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Title Banner -->
+  <section class="pt-32 pb-12 bg-gradient-to-r from-sky-500 to-teal-500 text-white text-center">
+    <div class="max-w-7xl mx-auto px-4">
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight font-heading">Our Gallery</h1>
+      <p class="text-sky-100 text-sm sm:text-base mt-2 max-w-xl mx-auto">Explore our dental chairs, scanning tools, treatment chambers, and smiling patients.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        
+        <!-- Image 1 -->
+        <div class="gallery-item relative rounded-2xl overflow-hidden shadow-md cursor-pointer group h-64" data-src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800" data-caption="State-of-the-Art Treatment Room">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=450&h=300&fit=crop" alt="Treatment Room" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 flex flex-col justify-end p-4 transition-all duration-300">
+            <span class="text-white text-sm font-extrabold font-heading">Advanced Setup</span>
+            <span class="text-sky-300 text-[10px] uppercase font-bold tracking-wider">Clinic Interior</span>
+          </div>
+          <div class="absolute top-4 right-4 p-2 rounded-full bg-white/20 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity">
+            <i data-lucide="zoom-in" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="gallery-item relative rounded-2xl overflow-hidden shadow-md cursor-pointer group h-64" data-src="https://images.unsplash.com/photo-1579684389782-64d84b5e901a?w=800" data-caption="Modern Dental Chair & Screens">
+          <img src="https://images.unsplash.com/photo-1579684389782-64d84b5e901a?w=450&h=300&fit=crop" alt="Modern Dental Chair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 flex flex-col justify-end p-4 transition-all duration-300">
+            <span class="text-white text-sm font-extrabold font-heading">Modern Dental Chair</span>
+            <span class="text-sky-300 text-[10px] uppercase font-bold tracking-wider">Equipment</span>
+          </div>
+        </div>
+
+        <!-- Image 3 -->
+        <div class="gallery-item relative rounded-2xl overflow-hidden shadow-md cursor-pointer group h-64" data-src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800" data-caption="Highly Clean and Hygienic Environment">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=450&h=300&fit=crop" alt="Hygienic Environment" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 flex flex-col justify-end p-4 transition-all duration-300">
+            <span class="text-white text-sm font-extrabold font-heading">Hygiene Protocols</span>
+            <span class="text-sky-300 text-[10px] uppercase font-bold tracking-wider">Safety First</span>
+          </div>
+        </div>
+
+        <!-- Image 4 -->
+        <div class="gallery-item relative rounded-2xl overflow-hidden shadow-md cursor-pointer group h-64" data-src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800" data-caption="Happy Client Smile Transformation">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=450&h=300&fit=crop" alt="Smile Makeover" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 flex flex-col justify-end p-4 transition-all duration-300">
+            <span class="text-white text-sm font-extrabold font-heading">Smile Makeover</span>
+            <span class="text-sky-300 text-[10px] uppercase font-bold tracking-wider">Happy Patients</span>
+          </div>
+        </div>
+
+        <!-- Image 5 -->
+        <div class="gallery-item relative rounded-2xl overflow-hidden shadow-md cursor-pointer group h-64" data-src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?w=800" data-caption="Laser Teeth Whitening - Before & After Results">
+          <img src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?w=450&h=300&fit=crop" alt="Teeth Whitening" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 flex flex-col justify-end p-4 transition-all duration-300">
+            <span class="text-white text-sm font-extrabold font-heading">Teeth Whitening Results</span>
+            <span class="text-sky-300 text-[10px] uppercase font-bold tracking-wider">Before & After</span>
+          </div>
+        </div>
+
+        <!-- Image 6 -->
+        <div class="gallery-item relative rounded-2xl overflow-hidden shadow-md cursor-pointer group h-64" data-src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800" data-caption="Digital Panoramic X-Ray Imaging Scanner">
+          <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=450&h=300&fit=crop" alt="X-Ray Scan" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 flex flex-col justify-end p-4 transition-all duration-300">
+            <span class="text-white text-sm font-extrabold font-heading">Digital Panoramic X-Ray</span>
+            <span class="text-sky-300 text-[10px] uppercase font-bold tracking-wider">Diagnostic Equipment</span>
+          </div>
+        </div>
+
+        <!-- Image 7 -->
+        <div class="gallery-item relative rounded-2xl overflow-hidden shadow-md cursor-pointer group h-64" data-src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800" data-caption="Cosmetic Composite Veneers - Alignment Makeover">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=450&h=300&fit=crop" alt="Cosmetic Alignment" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 flex flex-col justify-end p-4 transition-all duration-300">
+            <span class="text-white text-sm font-extrabold font-heading">Cosmetic Makeover</span>
+            <span class="text-sky-300 text-[10px] uppercase font-bold tracking-wider">Before & After</span>
+          </div>
+        </div>
+
+        <!-- Image 8 -->
+        <div class="gallery-item relative rounded-2xl overflow-hidden shadow-md cursor-pointer group h-64" data-src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800" data-caption="Happy Pediatric Smile - cavity free checkup">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=450&h=300&fit=crop" alt="Pediatric Smile" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 flex flex-col justify-end p-4 transition-all duration-300">
+            <span class="text-white text-sm font-extrabold font-heading">Pediatric Happy Patient</span>
+            <span class="text-sky-300 text-[10px] uppercase font-bold tracking-wider">Kids Dentist</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Lightbox Modal Structure -->
+  <div id="lightbox" class="lightbox hidden">
+    <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-sky-400 p-2 focus:outline-none transition-colors" aria-label="Close image gallery viewer">
+      <i data-lucide="x" class="w-8 h-8"></i>
+    </button>
+    <button id="lightbox-prev" class="absolute left-4 md:left-8 text-white hover:text-sky-400 p-2 focus:outline-none transition-colors">
+      <i data-lucide="chevron-left" class="w-10 h-10 md:w-12 md:h-12"></i>
+    </button>
+    <div class="max-w-4xl max-h-[80vh] px-4 flex flex-col items-center">
+      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[70vh] object-contain rounded-lg border border-slate-800 shadow-2xl">
+      <p id="lightbox-caption" class="text-slate-300 mt-4 font-heading text-sm md:text-base font-semibold text-center"></p>
+    </div>
+    <button id="lightbox-next" class="absolute right-4 md:right-8 text-white hover:text-sky-400 p-2 focus:outline-none transition-colors">
+      <i data-lucide="chevron-right" class="w-10 h-10 md:w-12 md:h-12"></i>
+    </button>
+    <div class="lightbox-overlay absolute inset-0 -z-10"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-8 pb-12 border-b border-slate-800">
+      <div class="md:col-span-4 space-y-4">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/logo.jpg" alt="Sai Surya Dental Clinic" class="h-10 w-10 rounded-full border border-slate-700 object-cover">
+          <div>
+            <span class="block font-heading font-extrabold text-base text-white tracking-tight leading-none">SAI SURYA</span>
+            <span class="block font-heading text-[10px] font-bold text-sky-500 tracking-widest mt-0.5 uppercase">Super Speciality Clinic</span>
+          </div>
+        </a>
+        <p class="text-xs sm:text-sm leading-relaxed">
+          We deliver world-class dental checkups, root canals, implants, cosmetic alignment, and pediatric dentistry using advanced technology. Book your slot for pain-free treatment.
+        </p>
+      </div>
+
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="text-white font-extrabold font-heading text-sm uppercase tracking-wider">Quick Links</h4>
+        <ul class="space-y-2 text-xs sm:text-sm">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home Page</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Our Services</a></li>
+          <li><a href="testimonials.html" class="hover:text-white transition-colors">Reviews</a></li>
+          <li><a href="gallery.html" class="hover:text-white transition-colors">Photo Gallery</a></li>
+          <li><a href="faq.html" class="hover:text-white transition-colors">FAQs</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-3 space-y-4 text-xs sm:text-sm">
+        <h4 class="text-white font-extrabold font-heading text-sm uppercase tracking-wider font-heading">Clinic Contact</h4>
+        <p class="leading-relaxed">
+          Sai Surya Super Speciality Dental Clinic,<br>
+          Near Sriharipuram, Gajuwaka,<br>
+          Visakhapatnam, Andhra Pradesh - 530026.
+        </p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+      <p>© 2026 Sai Surya Super Speciality Dental Clinic. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

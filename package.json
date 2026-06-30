@@ -1,0 +1,14 @@
+{
+  "name": "sai-surya-dental-clinic-backend",
+  "version": "1.0.0",
+  "description": "Node.js Express backend and multi-page portal for Sai Surya Super Speciality Dental Clinic",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "author": "Antigravity",
+  "license": "ISC"
+}

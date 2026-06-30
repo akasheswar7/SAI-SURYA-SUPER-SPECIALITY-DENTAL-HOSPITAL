@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <!-- Preloader lock script to prevent content flashing -->
+  <script>
+    (function() {
+      const visited = sessionStorage.getItem('saisurya_preloader_shown') === 'true';
+      if (visited) {
+        document.documentElement.classList.add('preloader-skipped');
+      } else {
+        document.documentElement.classList.add('preloader-active-lock');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Sai Surya Super Speciality Dental Clinic</title>
+  
+  <meta name="description" content="Learn about Sai Surya Super Speciality Dental Clinic near Sriharipuram, Gajuwaka. Meet our MDS doctors, explore our sterile hygiene standard, and discover our patient-first approach.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            clinic: {
+              light: '#f0f9ff',
+              sky: '#0ea5e9',
+              dark: '#0369a1',
+              navy: '#0f172a',
+              teal: '#0d9488',
+              tealLight: '#f0fdfa',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-700 antialiased selection:bg-sky-500 selection:text-white">
+  <!-- Premium Logo Preloader / Cinematic Split-Gate Splash Screen -->  <!-- Premium Concentric Rings Preloader / Cinematic Light-themed Splash Screen -->
+  <div class="logo-preloader" id="logoPreloader">
+    <div class="preloader-content">
+      <!-- Concentric Spinning Rings -->
+      <div class="rings-container">
+        <div class="preloader-ring-outer"></div>
+        <div class="preloader-ring-middle"></div>
+        <div class="preloader-ring-inner"></div>
+        <div class="preloader-logo-frame">
+          <img src="assets/logo.jpg" alt="Sai Surya Dental Clinic Logo">
+        </div>
+      </div>
+      <!-- Clinic branding -->
+      <div class="preloader-text-wrapper">
+        <h2 class="preloader-clinic-name">SAI SURYA</h2>
+        <p class="preloader-tagline">SUPER SPECIALITY DENTAL CLINIC</p>
+      </div>
+      <!-- Loading progress line -->
+      <div class="preloader-bar-container">
+        <div class="preloader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="assets/logo.jpg" alt="Sai Surya Clinic Logo" class="h-12 w-12 rounded-full border-2 border-sky-100 object-cover shadow-sm transition-transform duration-300 group-hover:scale-105">
+          <div>
+            <span class="block font-heading font-extrabold text-base sm:text-lg text-slate-800 tracking-tight leading-none">SAI SURYA</span>
+            <span class="block font-heading text-xs font-semibold text-sky-600 tracking-wider mt-0.5">SUPER SPECIALITY DENTAL</span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex space-x-1 lg:space-x-2">
+          <a href="about.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-sky-600 font-semibold transition-colors">About Us</a>
+          <a href="services.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">Services</a>
+          <a href="testimonials.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">Reviews</a>
+          <a href="gallery.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">Gallery</a>
+          <a href="faq.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">FAQs</a>
+          <a href="contact.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">Contact</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="contact.html" class="bg-gradient-to-r from-sky-500 to-teal-500 hover:from-sky-600 hover:to-teal-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300">
+            Book Appointment
+          </a>
+        </div>
+
+        <div class="flex md:hidden">
+          <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-lg text-slate-500 hover:text-sky-600 hover:bg-slate-100 transition-all">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white/95 shadow-lg">
+      <div class="px-2 pt-2 pb-4 space-y-1">
+        <a href="about.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-sky-600 bg-sky-50 border-l-4 border-sky-500">About Us</a>
+        <a href="services.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Our Services</a>
+        <a href="testimonials.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Testimonials</a>
+        <a href="gallery.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Gallery</a>
+        <a href="faq.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">FAQs</a>
+        <a href="contact.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Contact & Booking</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Title Banner -->
+  <section class="pt-32 pb-12 bg-gradient-to-r from-sky-500 to-teal-500 text-white text-center">
+    <div class="max-w-7xl mx-auto px-4">
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight font-heading">About Our Clinic</h1>
+      <p class="text-sky-100 text-sm sm:text-base mt-2 max-w-xl mx-auto">Discover the team, history, and medical technology behind your perfect smile.</p>
+    </div>
+  </section>
+
+  <!-- About Detail Section -->
+  <section id="about" class="py-16 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- visual column -->
+        <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div class="rounded-2xl overflow-hidden shadow-md">
+              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=300&h=400&fit=crop" alt="Advanced Setup" class="w-full object-cover">
+            </div>
+            <div class="bg-gradient-to-br from-sky-50 to-sky-100/50 p-6 rounded-2xl text-center border border-sky-100">
+              <span class="block font-heading text-3xl sm:text-4xl font-extrabold text-sky-700 counter-value" data-target="15000" data-suffix="+">0</span>
+              <span class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mt-1">Happy Patients</span>
+            </div>
+          </div>
+          <div class="space-y-4 pt-8">
+            <div class="bg-gradient-to-br from-teal-50 to-teal-100/50 p-6 rounded-2xl text-center border border-teal-100">
+              <span class="block font-heading text-3xl sm:text-4xl font-extrabold text-teal-700 counter-value" data-target="12" data-suffix="+">0</span>
+              <span class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mt-1">Years Experience</span>
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-md">
+              <img src="https://images.unsplash.com/photo-1579684389782-64d84b5e901a?w=300&h=400&fit=crop" alt="Dentist care" class="w-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- content column -->
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-sky-600 font-extrabold uppercase tracking-widest text-sm block">12+ Years of Excellence</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight font-heading">Who We Are</h2>
+          
+          <p class="text-slate-600 leading-relaxed">
+            Sai Surya Super Speciality Dental Clinic near Sriharipuram, Gajuwaka has been a household name for dental care in Visakhapatnam. Guided by our senior specialists, we strive to bring top-notch treatments in root canal therapy, digital implants, and teeth aligners.
+          </p>
+
+          <p class="text-slate-600 leading-relaxed">
+            Our clinic is designed with patient comfort as our central focus. We maintain 100% sterile parameters using high-standard autoclave processes, ensuring that clinical safety matches medical expertise. We offer treatments at completely affordable rates, providing flexible payment methods.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-6 pt-4 border-t border-slate-100">
+            <div class="space-y-2">
+              <h3 class="font-heading font-extrabold text-slate-800 text-lg flex items-center gap-2">
+                <i data-lucide="eye" class="text-sky-500 w-5 h-5"></i> Our Vision
+              </h3>
+              <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">To become the benchmark for affordable, highly advanced speciality dentistry in Visakhapatnam, matching global quality guidelines.</p>
+            </div>
+            <div class="space-y-2">
+              <h3 class="font-heading font-extrabold text-slate-800 text-lg flex items-center gap-2">
+                <i data-lucide="target" class="text-teal-500 w-5 h-5"></i> Our Mission
+              </h3>
+              <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">To offer compassionate, pain-free dental consultations that educate patients, saving their natural teeth and optimizing smile designs.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Additional Stats Row -->
+      <div class="mt-16 pt-12 border-t border-slate-100 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <span class="block font-heading text-4xl font-extrabold text-slate-800 counter-value" data-target="25000" data-suffix="+">0</span>
+          <span class="block text-xs font-semibold text-slate-500 uppercase tracking-widest mt-1">Treatments Completed</span>
+        </div>
+        <div>
+          <span class="block font-heading text-4xl font-extrabold text-slate-800 counter-value" data-target="10000" data-suffix="+">0</span>
+          <span class="block text-xs font-semibold text-slate-500 uppercase tracking-widest mt-1">Smile Makeovers</span>
+        </div>
+        <div>
+          <span class="block font-heading text-4xl font-extrabold text-slate-800 counter-value" data-target="99" data-suffix="%">0</span>
+          <span class="block text-xs font-semibold text-slate-500 uppercase tracking-widest mt-1">Satisfaction Rate</span>
+        </div>
+        <div>
+          <span class="block font-heading text-4xl font-extrabold text-slate-800 counter-value" data-target="15" data-suffix="+">0</span>
+          <span class="block text-xs font-semibold text-slate-500 uppercase tracking-widest mt-1">MDS Specialists</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-8 pb-12 border-b border-slate-800">
+      <div class="md:col-span-4 space-y-4">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/logo.jpg" alt="Sai Surya Dental Clinic" class="h-10 w-10 rounded-full border border-slate-700 object-cover">
+          <div>
+            <span class="block font-heading font-extrabold text-base text-white tracking-tight leading-none">SAI SURYA</span>
+            <span class="block font-heading text-[10px] font-bold text-sky-500 tracking-widest mt-0.5 uppercase">Super Speciality Clinic</span>
+          </div>
+        </a>
+        <p class="text-xs sm:text-sm leading-relaxed">
+          We deliver world-class dental checkups, root canals, implants, cosmetic alignment, and pediatric dentistry using advanced technology. Book your slot for pain-free treatment.
+        </p>
+      </div>
+
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="text-white font-extrabold font-heading text-sm uppercase tracking-wider">Quick Links</h4>
+        <ul class="space-y-2 text-xs sm:text-sm">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home Page</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Our Services</a></li>
+          <li><a href="testimonials.html" class="hover:text-white transition-colors">Reviews</a></li>
+          <li><a href="gallery.html" class="hover:text-white transition-colors">Photo Gallery</a></li>
+          <li><a href="faq.html" class="hover:text-white transition-colors">FAQs</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-3 space-y-4">
+        <h4 class="text-white font-extrabold font-heading text-sm uppercase tracking-wider">Popular Services</h4>
+        <ul class="space-y-2 text-xs sm:text-sm">
+          <li><a href="services.html" class="hover:text-white transition-colors">Root Canal Treatment</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Dental Implants Surgery</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Teeth Whitening</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Smile Makeover</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Invisible Aligners</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-3 space-y-4 text-xs sm:text-sm">
+        <h4 class="text-white font-extrabold font-heading text-sm uppercase tracking-wider">Clinic Contact</h4>
+        <p class="leading-relaxed">
+          Sai Surya Super Speciality Dental Clinic,<br>
+          Near Sriharipuram, Gajuwaka,<br>
+          Visakhapatnam, Andhra Pradesh - 530026.
+        </p>
+        <p class="font-bold flex flex-col gap-1 mt-2">
+          <a href="tel:+917893616535" class="hover:text-white flex items-center gap-1.5"><i data-lucide="phone" class="w-4 h-4 text-sky-500"></i> +91 78936 16535</a>
+          <a href="mailto:info@saisuryadentalclinic.com" class="hover:text-white flex items-center gap-1.5"><i data-lucide="mail" class="w-4 h-4 text-sky-500"></i> info@saisuryadental.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+      <p>© 2026 Sai Surya Super Speciality Dental Clinic. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+        <a href="#" class="hover:text-slate-400">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

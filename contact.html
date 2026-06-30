@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <!-- Preloader lock script to prevent content flashing -->
+  <script>
+    (function() {
+      const visited = sessionStorage.getItem('saisurya_preloader_shown') === 'true';
+      if (visited) {
+        document.documentElement.classList.add('preloader-skipped');
+      } else {
+        document.documentElement.classList.add('preloader-active-lock');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Appointment Booking | Sai Surya Super Speciality Dental Clinic</title>
+  
+  <meta name="description" content="Contact Sai Surya Super Speciality Dental Clinic in Gajuwaka near Sriharipuram. Book your dental appointment online, call us, or get driving directions on the map.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            clinic: {
+              light: '#f0f9ff',
+              sky: '#0ea5e9',
+              dark: '#0369a1',
+              navy: '#0f172a',
+              teal: '#0d9488',
+              tealLight: '#f0fdfa',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-700 antialiased selection:bg-sky-500 selection:text-white">
+  <!-- Premium Logo Preloader / Cinematic Split-Gate Splash Screen -->  <!-- Premium Concentric Rings Preloader / Cinematic Light-themed Splash Screen -->
+  <div class="logo-preloader" id="logoPreloader">
+    <div class="preloader-content">
+      <!-- Concentric Spinning Rings -->
+      <div class="rings-container">
+        <div class="preloader-ring-outer"></div>
+        <div class="preloader-ring-middle"></div>
+        <div class="preloader-ring-inner"></div>
+        <div class="preloader-logo-frame">
+          <img src="assets/logo.jpg" alt="Sai Surya Dental Clinic Logo">
+        </div>
+      </div>
+      <!-- Clinic branding -->
+      <div class="preloader-text-wrapper">
+        <h2 class="preloader-clinic-name">SAI SURYA</h2>
+        <p class="preloader-tagline">SUPER SPECIALITY DENTAL CLINIC</p>
+      </div>
+      <!-- Loading progress line -->
+      <div class="preloader-bar-container">
+        <div class="preloader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="assets/logo.jpg" alt="Sai Surya Clinic Logo" class="h-12 w-12 rounded-full border-2 border-sky-100 object-cover shadow-sm transition-transform duration-300 group-hover:scale-105">
+          <div>
+            <span class="block font-heading font-extrabold text-base sm:text-lg text-slate-800 tracking-tight leading-none">SAI SURYA</span>
+            <span class="block font-heading text-xs font-semibold text-sky-600 tracking-wider mt-0.5">SUPER SPECIALITY DENTAL</span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex space-x-1 lg:space-x-2">
+          <a href="about.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">About Us</a>
+          <a href="services.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">Services</a>
+          <a href="testimonials.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">Reviews</a>
+          <a href="gallery.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">Gallery</a>
+          <a href="faq.html" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors">FAQs</a>
+          <a href="contact.html" class="nav-link px-3 py-2 rounded-lg text-sm font-sky-600 font-semibold transition-colors">Contact</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="contact.html" class="bg-gradient-to-r from-sky-500 to-teal-500 hover:from-sky-600 hover:to-teal-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300">
+            Book Appointment
+          </a>
+        </div>
+
+        <div class="flex md:hidden">
+          <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-lg text-slate-500 hover:text-sky-600 hover:bg-slate-100 transition-all">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white/95 shadow-lg">
+      <div class="px-2 pt-2 pb-4 space-y-1">
+        <a href="about.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">About Us</a>
+        <a href="services.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Our Services</a>
+        <a href="testimonials.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Testimonials</a>
+        <a href="gallery.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">Gallery</a>
+        <a href="faq.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-600">FAQs</a>
+        <a href="contact.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-sky-600 bg-sky-50 border-l-4 border-sky-500">Contact & Booking</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Title Banner -->
+  <section class="pt-32 pb-12 bg-gradient-to-r from-sky-500 to-teal-500 text-white text-center">
+    <div class="max-w-7xl mx-auto px-4">
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight font-heading">Book Appointment & Directions</h1>
+      <p class="text-sky-100 text-sm sm:text-base mt-2 max-w-xl mx-auto">Get in touch directly or request your clinical visit slot online below.</p>
+    </div>
+  </section>
+
+  <!-- Contact Body Section -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12">
+        
+        <!-- Contact details column (Left) -->
+        <div class="lg:col-span-5 space-y-8">
+          <div>
+            <span class="text-sky-600 font-extrabold uppercase tracking-widest text-sm block mb-2">Clinic Information</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-heading">
+              Sai Surya Dental Clinic
+            </h2>
+          </div>
+
+          <!-- Info Cards -->
+          <div class="space-y-4">
+            
+            <div class="flex gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="flex-shrink-0 bg-sky-50 text-sky-600 p-3.5 rounded-xl h-12 w-12 flex items-center justify-center">
+                <i data-lucide="map-pin" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-800 text-sm sm:text-base font-heading">Clinic Address</h4>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1 leading-relaxed">
+                  Sai Surya Super Speciality Dental Clinic,<br>
+                  Near Sriharipuram, Gajuwaka,<br>
+                  Visakhapatnam, Andhra Pradesh - 530026.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="flex-shrink-0 bg-teal-50 text-teal-600 p-3.5 rounded-xl h-12 w-12 flex items-center justify-center">
+                <i data-lucide="phone-call" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-800 text-sm sm:text-base font-heading">Helpline Numbers</h4>
+                <p class="text-slate-600 text-xs sm:text-sm mt-1 font-semibold flex flex-col">
+                  <a href="tel:+917893616535" class="hover:text-sky-600 transition-colors">+91 78936 16535</a>
+                  <a href="tel:+917893616535" class="hover:text-sky-600 transition-colors">+91 78936 16535</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="flex-shrink-0 bg-sky-50 text-sky-600 p-3.5 rounded-xl h-12 w-12 flex items-center justify-center">
+                <i data-lucide="clock" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-800 text-sm sm:text-base font-heading">Timings</h4>
+                <div class="text-slate-600 text-xs sm:text-sm mt-1 space-y-0.5">
+                  <p class="flex justify-between gap-6"><span>Mon – Sat:</span> <span class="font-bold text-slate-800">9:00 AM – 8:30 PM</span></p>
+                  <p class="flex justify-between gap-6"><span>Sunday (Emergencies only):</span> <span class="font-bold text-slate-800">10:00 AM – 1:00 PM</span></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Appointment Form Column (Right) -->
+        <div class="lg:col-span-7">
+          <div class="p-6 sm:p-10 rounded-3xl bg-slate-50 border border-slate-100 shadow-lg relative">
+            <h3 class="font-heading font-extrabold text-slate-800 text-2xl mb-6">
+              Request Your Slot
+            </h3>
+            
+            <form id="appointment-form" class="space-y-5">
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="appt-name" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2 font-heading">Full Name *</label>
+                  <input type="text" id="appt-name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-400 text-sm" placeholder="Enter your name">
+                </div>
+                <div>
+                  <label for="appt-phone" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2 font-heading">Mobile Number *</label>
+                  <input type="tel" id="appt-phone" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-400 text-sm" placeholder="Enter 10-digit number">
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="appt-email" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2 font-heading">Email Address</label>
+                  <input type="email" id="appt-email" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-400 text-sm" placeholder="Enter email (optional)">
+                </div>
+                <div>
+                  <label for="appt-treatment" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2 font-heading">Treatment Required *</label>
+                  <select id="appt-treatment" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-400 text-sm text-slate-600 bg-white">
+                    <option value="" disabled selected>Select a Service</option>
+                    <option value="Dental Checkup">Dental Checkup</option>
+                    <option value="Teeth Cleaning">Teeth Cleaning</option>
+                    <option value="Root Canal Treatment">Root Canal Treatment</option>
+                    <option value="Dental Implants">Dental Implants</option>
+                    <option value="Dental Braces">Dental Braces</option>
+                    <option value="Invisible Aligners">Invisible Aligners</option>
+                    <option value="Tooth Extraction">Tooth Extraction</option>
+                    <option value="Wisdom Tooth Removal">Wisdom Tooth Removal</option>
+                    <option value="Teeth Whitening">Teeth Whitening</option>
+                    <option value="Smile Designing">Smile Designing</option>
+                    <option value="Crowns & Bridges">Crowns & Bridges</option>
+                    <option value="Dentures">Dentures</option>
+                    <option value="Pediatric Dentistry">Pediatric Dentistry</option>
+                    <option value="Cosmetic Dentistry">Cosmetic Dentistry</option>
+                    <option value="Gum Treatment">Gum Treatment</option>
+                    <option value="Emergency Dental Care">Emergency Dental Care</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="appt-message" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2 font-heading">Symptoms / Message</label>
+                <textarea id="appt-message" rows="4" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-400 text-sm resize-none" placeholder="Describe symptoms or specify slot timings..."></textarea>
+              </div>
+              <button type="submit" class="w-full py-4 bg-gradient-to-r from-sky-500 to-teal-500 hover:from-sky-600 hover:to-teal-600 text-white rounded-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300">
+                Submit Appointment Request
+              </button>
+            </form>
+            
+            <!-- Success Overlay Modal -->
+            <div id="form-success-overlay" class="hidden absolute inset-0 bg-white rounded-3xl z-10 flex-col items-center justify-center p-8 text-center animate-fade-in">
+              <div class="flex justify-center mb-6">
+                <svg class="success-checkmark-svg" viewBox="0 0 52 52">
+                  <circle class="success-checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                  <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+              </div>
+              <h4 class="text-2xl font-extrabold text-slate-800 font-heading mb-2">Booking Success!</h4>
+              <p class="text-slate-600 text-sm max-w-sm leading-relaxed mb-6 font-body">
+                Thank you! Your slot reservation has been received. Please choose a method to send the details directly to our doctor to confirm instantly:
+              </p>
+
+              <div class="flex flex-col gap-2 w-full max-w-xs mb-4">
+                <a id="success-wa-btn" href="#" target="_blank" class="w-full py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+                  <i data-lucide="message-square" class="w-4 h-4"></i>
+                  Send via WhatsApp
+                </a>
+                
+                <a id="success-sms-btn" href="#" class="w-full py-2.5 bg-sky-500 hover:bg-sky-600 text-white font-bold rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-2">
+                  <i data-lucide="smartphone" class="w-4 h-4"></i>
+                  Send via Standard SMS
+                </a>
+              </div>
+
+              <button id="success-close-btn" class="text-slate-400 hover:text-slate-600 text-xs font-semibold underline transition-all">
+                Skip & Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Map Frame -->
+  <section class="w-full h-[400px]">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.1656916318466!2d83.2365108!3d17.6896312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a396906cded982b%3A0x98672d7e3775337a!2sSai+Surya+Super+Speciality+Dental+and+cosmetic+laser+center!5e0!3m2!1sen!2sin!4v1724600000000!5m2!1sen!2sin" 
+            class="w-full h-full border-0" 
+            allowfullscreen="" 
+            loading="lazy" 
+            title="Sai Surya Super Speciality Dental Clinic Location Map">
+    </iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-8 pb-12 border-b border-slate-800">
+      <div class="md:col-span-4 space-y-4">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/logo.jpg" alt="Sai Surya Dental Clinic" class="h-10 w-10 rounded-full border border-slate-700 object-cover">
+          <div>
+            <span class="block font-heading font-extrabold text-base text-white tracking-tight leading-none">SAI SURYA</span>
+            <span class="block font-heading text-[10px] font-bold text-sky-500 tracking-widest mt-0.5 uppercase">Super Speciality Clinic</span>
+          </div>
+        </a>
+        <p class="text-xs sm:text-sm leading-relaxed">
+          We deliver world-class dental checkups, root canals, implants, cosmetic alignment, and pediatric dentistry using advanced technology. Book your slot for pain-free treatment.
+        </p>
+      </div>
+
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="text-white font-extrabold font-heading text-sm uppercase tracking-wider">Quick Links</h4>
+        <ul class="space-y-2 text-xs sm:text-sm">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home Page</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Our Services</a></li>
+          <li><a href="testimonials.html" class="hover:text-white transition-colors">Reviews</a></li>
+          <li><a href="gallery.html" class="hover:text-white transition-colors">Photo Gallery</a></li>
+          <li><a href="faq.html" class="hover:text-white transition-colors">FAQs</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-3 space-y-4 text-xs sm:text-sm">
+        <h4 class="text-white font-extrabold font-heading text-sm uppercase tracking-wider">Popular Services</h4>
+        <ul class="space-y-2 text-xs sm:text-sm">
+          <li><a href="services.html" class="hover:text-white transition-colors">Root Canal Treatment</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Dental Implants Surgery</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Teeth Whitening</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Smile Makeover</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Invisible Aligners</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-3 space-y-4 text-xs sm:text-sm">
+        <h4 class="text-white font-extrabold font-heading text-sm uppercase tracking-wider">Clinic Contact</h4>
+        <p class="leading-relaxed">
+          Sai Surya Super Speciality Dental Clinic,<br>
+          Near Sriharipuram, Gajuwaka,<br>
+          Visakhapatnam, Andhra Pradesh - 530026.
+        </p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 text-xs text-slate-500">
+      <p>© 2026 Sai Surya Super Speciality Dental Clinic. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
